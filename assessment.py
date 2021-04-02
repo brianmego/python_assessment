@@ -6,7 +6,7 @@ Below you will find a series of unit tests. To complete the assessment,
 replace the code on the commented out lines in each test function with your
 own to make the tests pass.
 
-To run this file, you can type ./interview.py if in a CLI, or
+To run this file, you can type ./assessment.py if in a CLI, or
 press the 'Run' button if in an online editor.
 
 Good luck!
@@ -152,12 +152,14 @@ if __name__ == '__main__':
         ('FlattenDict', flatten_dict({"spam1": {"spam2": "spam3"}, "eggs1": {"eggs2": "eggs3"}}), {"spam1": "spam2.spam3", "eggs1": "eggs2.eggs3"}),
     ]
 
+    index = 0
     for challenge in challenge_list:
+        index += 1
         name = challenge[0]
         actual = challenge[1]
         expected = challenge[2]
         if actual == expected:
-            print(f"{name}: PASSED")
+            print(f"{index}. {name}: PASSED")
         else:
-            print(f"{name}: FAILED --- {actual} != {expected}")
+            print(f"{index}. {name}: FAILED --- {actual} != {expected}")
             break
