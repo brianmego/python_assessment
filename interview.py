@@ -1,3 +1,17 @@
+#!/usr/bin/env python3
+"""
+Welcome to the python assessment!
+
+Below you will find a series of unit tests. To complete the assessment,
+replace the code on the commented out lines in each test function with your
+own to make the tests pass.
+
+To run this file, you can type ./interview.py if in a CLI, or
+press the 'Run' button if in an online editor.
+
+Good luck!
+"""
+
 def get_list_index(inp: list, index: int):
     """
     input:
@@ -5,7 +19,7 @@ def get_list_index(inp: list, index: int):
         index: 2
     expected: 3
     """
-    pass
+    # Your code here to return the expected value
 
 
 def uppercase_str(inp: str):
@@ -14,7 +28,7 @@ def uppercase_str(inp: str):
         inp: 'hello world'
     expected: HELLO WORLD
     """
-    pass
+    # Your code here to return the expected value
 
 
 def get_dict_value(inp: dict, key: str):
@@ -26,7 +40,7 @@ def get_dict_value(inp: dict, key: str):
         key: "spam"
     expected: "eggs"
     """
-    pass
+    # Your code here to return the expected value
 
 
 def get_dict_value_with_default(inp: dict, key: str):
@@ -35,10 +49,10 @@ def get_dict_value_with_default(inp: dict, key: str):
         inp: {
             "spam": "eggs"
         }
-        key: "spam"
+        key: "foo"
     expected: "default"
     """
-    pass
+    # Your code here to return the expected value
 
 
 def combine_lists(inp: list, inp2: list):
@@ -48,7 +62,7 @@ def combine_lists(inp: list, inp2: list):
         inp2: [2, 3]
     expected: [1, 2, 2, 3]
     """
-    pass
+    # Your code here to return the expected value
 
 
 def combine_lists_no_duplicates(inp: list, inp2: list):
@@ -58,9 +72,23 @@ def combine_lists_no_duplicates(inp: list, inp2: list):
         inp2: [2, 3]
     expected: [1, 2, 3]
     """
-    pass
+    # Your code here to return the expected value
 
 
+def ensure_in_place(func):
+    """Decorator for the next question. Nothing to see here"""
+
+    def inner(inp, inc_value):
+        _orig_id = id(inp)
+        _orig = inp
+        response = func(inp, inc_value)
+        if id(response) != _orig_id:
+            return 'Whoops! Looks like you made a new item in memory!'
+        return response
+    return inner
+
+
+@ensure_in_place
 def increment_in_place(inp: list, inc_value: int):
     """
     input:
@@ -68,20 +96,8 @@ def increment_in_place(inp: list, inc_value: int):
         inc_value: 2
     expected: [3, 4, 5]
     """
-    ### Untouchable ###
-    _orig_id = id(inp)
-    _orig = inp
-    ### /Untouchable ###
-
-    # Your Code
-    # Your Code
-    # Your Code
-
-    ### Untouchable ###
-    if id(inp) != _orig_id:
-        return _orig
+    # Your code here to manipulate inp to the expected value
     return inp
-    ### /Untouchable ###
 
 
 def sum_list(inp: list):
@@ -90,17 +106,17 @@ def sum_list(inp: list):
         inp: [1, 2, 3]
     expected==6
     """
-    pass
+    # Your code here to return the expected value
 
 
-def left_pad(inp: str, pad_length: int):
+def left_pad(inp: str, total_length: int):
     """
     input:
         inp: 'hello'
-        pad_length: 10
+        total_length: 10
     expected==00000hello
     """
-    pass
+    # Your code here to return the expected value
 
 
 def flatten_dict(inp: dict):
@@ -119,7 +135,7 @@ def flatten_dict(inp: dict):
         "eggs1": "eggs2.eggs3"
         }
     """
-    pass
+    # Your code here to return the expected value
 
 
 if __name__ == '__main__':
