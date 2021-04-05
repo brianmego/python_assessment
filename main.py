@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+This code is not meant to be altered. Please open assessment.py
+"""
 import sys
 sys.path.append('.')
 from assessment import *
