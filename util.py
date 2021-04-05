@@ -5,8 +5,8 @@ def ensure_in_place(func):
         _orig_id = id(inp)
         _orig = inp
         response = func(inp, inc_value)
-        if id(response) != _orig_id:
-            return 'Whoops! Looks like you made a new item in memory!'
+        msg =  'Whoops! Looks like you made a new item in memory! See if you can alter the list in place.'
+        assert id(response) == _orig_id, msg
         return response
     return inner
 
