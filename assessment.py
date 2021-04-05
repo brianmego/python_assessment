@@ -11,6 +11,9 @@ press the 'Run' button if in an online editor.
 
 Good luck!
 """
+import sys
+sys.path.append('.')
+import util
 
 def get_list_index(inp: list, index: int):
     """
@@ -75,20 +78,7 @@ def combine_lists_no_duplicates(inp: list, inp2: list):
     # Your code here to return the expected value
 
 
-def ensure_in_place(func):
-    """Decorator for the next question. Nothing to see here"""
-
-    def inner(inp, inc_value):
-        _orig_id = id(inp)
-        _orig = inp
-        response = func(inp, inc_value)
-        if id(response) != _orig_id:
-            return 'Whoops! Looks like you made a new item in memory!'
-        return response
-    return inner
-
-
-@ensure_in_place
+@util.ensure_in_place
 def increment_in_place(inp: list, inc_value: int):
     """
     input:
