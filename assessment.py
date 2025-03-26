@@ -111,7 +111,7 @@ def flatten_dict(inp: dict):
     input:
         inp: {
             "spam1": {
-                "spam2": "eggs"
+                "spam2": "spam3"
             },
             "eggs1": {
                 "eggs2": "eggs3"
